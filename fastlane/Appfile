@@ -1,7 +1,16 @@
-app_identifier "pl.hugo.bartek.test.FastlineTest"
-apple_id "corhydron@gmail.com"
 
-# You can uncomment the lines below and add your own 
-# team selection in case you're in multiple teams
-# team_name "Felix Krause"
-# team_id "Q2CBPJ58CA"
+app_identifier "co.untitledkingdom.fastlane"
+apple_id "bartek@untitledkingdom.co"
+team_name "Untitled Kingdom Ltd"
+team_id "4P3SYPD634"
+
+
+##configuration might de different for each platform
+# for_platform :ios do
+#
+# end
+
+##configuration might de different for each lane
+# for_lane :enterprise do
+#
+# end

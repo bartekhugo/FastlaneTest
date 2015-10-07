@@ -1,50 +1,58 @@
-# Customise this file, documentation can be found here:
-# https://github.com/krausefx/fastlane#customise-the-fastfile
-
-# Change the syntax highlighting to Ruby
-
-# All lines starting with a # are ignored when running `fastlane`
 
 before_all do
+  # admin only can add slack services  
   # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
 
-  # sh "./customShellScript.sh"
-
-  # cocoapods
-
-  # increment_build_number
-
-  ipa({
-    configuration: "Debug",
-    scheme: "FastlineTest",
-  })
-
-  # xctool
+  cocoapods
 end
+
+
 
 lane :test do
+  # xctest
   # snapshot
 end
 
-lane :beta do
-  # snapshot
-  sigh
-  deliver :skip_deploy, :beta
-  # sh "your_script.sh"
+
+lane :crashlytics do
+  # ensure_git_status_clean
+  
+  ## might introduce extra level of mess in developer portal and invalid all provisioning porfiles - experiment more!   
+  # cert(
+  #  output_path: "build"
+  # )
+  
+  sigh(
+    adhoc: true,
+    provisioning_name: "FastlaneTest_AdHoc",
+    output_path: "build"
+  )
+  
+  gym(
+    clean: true,
+    configuration: "AdHoc",
+    scheme: "FastlineTest",
+    output_directory: "build"
+  )    
+  
+  crashlytics({
+    crashlytics_path: './Pods/Crashlytics/Crashlytics.framework',
+    api_token: ENV['CRASHLYTICS_API_TOKEN'],
+    build_secret: ENV['CRASHLYTICS_BUILD_SECRET'],
+    # groups: "Expansoft",
+    notifications: "YES"
+  })
+  
 end
 
-lane :deploy do
-  # snapshot
-  sigh
-  deliver :skip_deploy, :force
-  # frameit
+
+
+
+lane :appstore do
+  # sigh
+  # deliver
 end
 
-lane :inhouse do
-  # insert your code here
-end
-
-# You can define as many lanes as you want
 
 after_all do |lane|
   # This block is called, only if the executed lane was successful
