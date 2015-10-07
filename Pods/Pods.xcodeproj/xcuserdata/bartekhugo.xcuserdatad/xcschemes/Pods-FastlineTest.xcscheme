@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "61CEB2748FEB461FDE231DB9"
+               BlueprintIdentifier = "E300A47FE131CE1AD530047A"
                BuildableName = "libPods-FastlineTest.a"
                BlueprintName = "Pods-FastlineTest"
                ReferencedContainer = "container:Pods.xcodeproj">

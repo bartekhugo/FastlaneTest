@@ -155,6 +155,7 @@
 				3E4D59B61AA0820E00E419CE /* Frameworks */,
 				3E4D59B71AA0820E00E419CE /* Resources */,
 				2FE0F759D39427B052B90B98 /* Copy Pods Resources */,
+				3E5DB1261BC54B2000F2B28A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,6 +256,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastlineTest/Pods-FastlineTest-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3E5DB1261BC54B2000F2B28A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" bd2b571eebedc8a01ca65369870b1f7271449168 a5e2cfd896f358346401e6c38e6742051b65e36dba396e66458be07eaa614bbb";
 		};
 		ACD4963D96EC9D52449DB45D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
